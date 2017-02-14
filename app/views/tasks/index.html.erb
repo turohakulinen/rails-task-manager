@@ -1,0 +1,17 @@
+<%@tasks.each do |t|%>
+  <%= link_to(t) do %>
+    <h2><%= t.name %></h2>
+  <% end %>
+  <p><%= t.description %></p>
+  <p><%= t.done == 'true' ? "Done" : "Not done"%></p>
+  <%= link_to "Update", edit_task_path(t) %>
+  <br>
+  <%= link_to "Delete", task_path(t),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+  <br>
+<%end%>
+<%= link_to(new_task_path) do %>
+  <h2>New Task</h2>
+<% end %>
+

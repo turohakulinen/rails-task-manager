@@ -1,0 +1,4 @@
+  <h1><%= @task.name %></h1>
+  <p><%= @task.description %></p>
+  <p><%= @task.done == 'true' ? "Done" : "Not done"%></p>
+  <%= link_to "All Tasks", tasks_path %>
